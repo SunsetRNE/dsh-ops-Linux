@@ -50,7 +50,9 @@ const CODE_EXTENSIONS = new Set([
  * Directory prefixes whose files are never hand-written source. `native/target`
  * is Cargo's build directory, `runtime` is staged output, `licenses` and
  * `docs` are prose and third-party text, `node_modules` is installed rather
- * than committed, and `dist` is release output.
+ * than committed, and `dist` is release output. `lib` is generated from `src/` by
+ * `npm run build`; this fork commits it so a checkout is installable without a
+ * build step, and generated declarations there exceed the limit by design.
  */
 const SKIPPED_PREFIXES = Object.freeze([
   'node_modules/',
@@ -59,6 +61,7 @@ const SKIPPED_PREFIXES = Object.freeze([
   'licenses/',
   'docs/',
   'dist/',
+  'lib/',
 ])
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')

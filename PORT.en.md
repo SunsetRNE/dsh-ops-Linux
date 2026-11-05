@@ -39,6 +39,11 @@ node bin/native-runtime.mjs check --staged
 
 The repository ships the built `runtime/linux-arm64/dsh-ops-worker` with its `provenance.json`, so no Rust toolchain is needed to use it; re-run the commands above after changing the Rust sources.
 
+## Differences from upstream conventions
+
+- This fork commits `lib/` (the `npm run build` output), so a clone is installable with `link:` or a tarball without building first; after editing `src/`, run `npm run build` and commit the result. `scripts/check-file-size.mjs` therefore skips `lib/` alongside `docs/` and `runtime/`, since generated declarations exceed the limit.
+- The staged `runtime/linux-arm64/` worker is committed too.
+
 ## Testing
 
 ```bash

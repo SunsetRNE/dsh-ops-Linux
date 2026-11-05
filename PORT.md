@@ -39,6 +39,11 @@ node bin/native-runtime.mjs check --staged
 
 仓库内已附带构建好的 `runtime/linux-arm64/dsh-ops-worker` 及其 `provenance.json`，因此不装 Rust 也能直接使用；源码改动后用上面的命令重新 stage 即可。
 
+## 与上游仓库约定的差异
+
+- 本仓库提交了 `lib/`（`npm run build` 的产物），因此 clone 下来即可直接 `link:`/打包安装，不需要先构建；改 `src/` 后重新执行 `npm run build` 并提交。`scripts/check-file-size.mjs` 相应地把 `lib/` 与 `docs/`、`runtime/` 一起排除在行数闸门之外（生成的 `.d.ts` 会超过上限）。
+- `runtime/linux-arm64/` 的 worker 同样入库。
+
 ## 测试
 
 ```bash

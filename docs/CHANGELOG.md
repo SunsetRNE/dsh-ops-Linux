@@ -18,6 +18,8 @@ this package adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- This fork commits the built `lib/` so a checkout installs without a build step, and the
+  file-size gate skips generated output under `lib/` for that reason.
 - The declared DSH range is `>=0.2.0-rc.2 <0.2.3-0`, so DSH 0.2.2 is accepted instead of being
   reported as `incompatible-version`. Interfaces used by the plugin are unchanged in 0.2.2-rc.1.
 - On Linux, publishing a file falls back to `renameat2(RENAME_NOREPLACE)` when `linkat` is refused
