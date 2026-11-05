@@ -1,0 +1,12 @@
+# linux-arm64 (aarch64-unknown-linux-gnu) build settings.
+#
+# 1. rustix_use_libc: route filesystem syscalls through libc instead of raw
+#    `svc`. Syscall-translating sandboxes (proot/proroot on Android) handle
+#    libc calls but resolve dirfd-relative raw renameat/renameat2 against the
+#    cwd, which breaks every cap-std rename (atomic replace, result cache).
+# 2. max-page-size=2MiB: keep the RX and RW PT_LOAD segments far apart in
+#    virtual memory. Loaders that map every segment RW and mprotect afterwards
+#    otherwise get adjacent VMAs merged, and Android SELinux then denies the
+#    RX mprotect (execmod) with EACCES. Harmless on ordinary arm64 Linux.
+[target.aarch64-unknown-linux-gnu]
+rustflags = ["--cfg", "rustix_use_libc", "-C", "link-arg=-Wl,-z,max-page-size=0x200000"]
