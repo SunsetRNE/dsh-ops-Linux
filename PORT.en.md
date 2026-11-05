@@ -5,7 +5,7 @@ This repository is a self-maintained port of [T-Auto/dsh-ops](https://github.com
 | Target | Change |
 | --- | --- |
 | platform | Adds `linux-arm64` (Android / ARM64 Linux); the four upstream targets stay |
-| DSH | Widens the range to `>=0.2.0-rc.2 <0.2.2-0 || >=0.2.2-0 <0.2.3-0` (upstream: `<0.2.2-0`) |
+| DSH | Widens the range to `>=0.2.0-rc.2 <0.2.2-0 || >=0.2.2-0 <0.3.0-0 || >=0.2.3-0 <0.3.0-0 || >=0.2.4-0 <0.3.0-0` (upstream: `<0.2.2-0`) |
 
 ## Why the changes are needed
 

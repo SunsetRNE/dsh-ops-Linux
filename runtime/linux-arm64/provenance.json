@@ -1,5 +1,5 @@
 {
-  "version": "0.4.4-linux.1",
+  "version": "0.4.4-linux.2",
   "target": "linux-arm64",
   "executable": "dsh-ops-worker",
   "sha256": "f99a3040ef624caea9acc79795792c916aa5c2afd97f73936b866dcff51d633d",

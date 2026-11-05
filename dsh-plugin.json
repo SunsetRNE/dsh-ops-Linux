@@ -3,7 +3,7 @@
   "manifestVersion": "0.15",
   "id": "dsh-ops-linux.native",
   "name": "dsh-ops-linux",
-  "version": "0.4.4-linux.1",
+  "version": "0.4.4-linux.2",
   "license": "MIT",
   "facets": {
     "host": {

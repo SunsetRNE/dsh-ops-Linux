@@ -7,6 +7,13 @@ this package adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+
+### Changed
+
+- The DSH range keeps headroom: `>=0.2.0-rc.2 <0.2.2-0 || >=0.2.2-0 <0.3.0-0 || >=0.2.3-0 <0.3.0-0 || >=0.2.4-0 <0.3.0-0`.
+  The branches past `<0.2.3-0` stop a later 0.2.x stable or prerelease from disabling the bundle
+  the way 0.2.2-rc.1 did; each patch position needs its own branch because node-semver only admits
+  a prerelease when a comparator on the same tuple carries a prerelease tag.
 ### Added
 
 - `linux-arm64` as a supported target: `PLATFORMS`, `SUPPORTED_TARGETS` and the manifest
