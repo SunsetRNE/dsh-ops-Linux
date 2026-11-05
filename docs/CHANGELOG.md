@@ -20,8 +20,10 @@ this package adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - This fork commits the built `lib/` so a checkout installs without a build step, and the
   file-size gate skips generated output under `lib/` for that reason.
-- The declared DSH range is `>=0.2.0-rc.2 <0.2.3-0`, so DSH 0.2.2 is accepted instead of being
-  reported as `incompatible-version`. Interfaces used by the plugin are unchanged in 0.2.2-rc.1.
+- The declared DSH range is `>=0.2.0-rc.2 <0.2.2-0 || >=0.2.2-0 <0.2.3-0`, so DSH 0.2.2 is
+  accepted instead of being reported as `incompatible-version`. The second branch is explicit
+  because node-semver only admits a prerelease when a comparator on the same `major.minor.patch`
+  tuple carries a prerelease tag; a single `<0.2.3-0` comparator silently excludes `0.2.2-rc.1`. Interfaces used by the plugin are unchanged in 0.2.2-rc.1.
 - On Linux, publishing a file falls back to `renameat2(RENAME_NOREPLACE)` when `linkat` is refused
   (Android app domains get EACCES): still atomic and no-clobber, with the source consumed at publish.
 - An extended attribute the new inode already carries with the same value counts as preserved
