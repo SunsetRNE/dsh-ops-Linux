@@ -5,7 +5,7 @@
  * artifacts on disk and compares them with the pins, the record, and
  * `SHA256SUMS`.
  *
- * @module dsh-ops/build/lib/check
+ * @module dsh-ops-linux/build/lib/check
  */
 
 import fs from 'node:fs'

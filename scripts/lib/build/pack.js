@@ -4,7 +4,7 @@
  * `npm pack` each directory, then write `SHA256SUMS`, the release-wide
  * `provenance.json`, and the publish plan.
  *
- * @module dsh-ops/build/lib/pack
+ * @module dsh-ops-linux/build/lib/pack
  */
 
 import fs from 'node:fs'

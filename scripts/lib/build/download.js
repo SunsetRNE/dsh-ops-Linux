@@ -5,7 +5,7 @@
  * happens to work would be a silent bypass of the proxy the environment
  * requires. Nothing here is imported for its side effects.
  *
- * @module dsh-ops/build/lib/download
+ * @module dsh-ops-linux/build/lib/download
  */
 
 import crypto from 'node:crypto'
@@ -58,7 +58,7 @@ export function openResponse(url, proxy, redirectsLeft) {
     const port = Number(target.port === '' ? (secure ? 443 : 80) : target.port)
     const headers = {
       host: target.host,
-      'user-agent': 'dsh-ops-release-script',
+      'user-agent': 'dsh-ops-linux-release-script',
       accept: '*/*',
       'accept-encoding': 'identity',
     }

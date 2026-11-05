@@ -12,7 +12,7 @@
  * (icon and locale documents) being real, package-relative, and published by the
  * `files` whitelist.
  *
- * @module dsh-ops/validate-manifest
+ * @module dsh-ops-linux/validate-manifest
  */
 
 import fs from 'node:fs'
@@ -496,10 +496,10 @@ if (display !== undefined) {
 }
 
 /** Payload the published package must carry, as `files` entries or paths they cover. */
-const ptc = manifestRaw.contributes?.['x-components']?.find(c => c.id === 'dsh-ops-mode-ptc')
+const ptc = manifestRaw.contributes?.['x-components']?.find(c => c.id === 'dsh-ops-linux-mode-ptc')
 const components = manifestRaw.contributes?.['x-components'] ?? []
 for (const fact of componentChecks(components)) check(...fact)
-check(ptc?.entry === 'dsh-ops/mode-ptc' && ptc?.defaultEnabled === true, 'native PTC enhancement is enabled by default; presentation stays scoped')
+check(ptc?.entry === 'dsh-ops-linux/mode-ptc' && ptc?.defaultEnabled === true, 'native PTC enhancement is enabled by default; presentation stays scoped')
 check(JSON.stringify(ptc?.tools) === JSON.stringify([...PTC_API_TOOLS, 'load_sdk'].map(publicToolName)), 'PTC declaration matches the generated tool contract')
 check(PTC_API_TOOLS.every(t => definition(t, () => {}).parameters.type === 'object'), 'PTC schemas remain structured')
 check(JSON.stringify(pkg.os) === '["win32","linux","darwin"]' && JSON.stringify(pkg.cpu) === '["x64","arm64"]' &&
@@ -508,13 +508,13 @@ check(JSON.stringify(pkg.os) === '["win32","linux","darwin"]' && JSON.stringify(
   'Supported exact targets are Windows x64, Linux x64/arm64 and macOS arm64/x64; Intel Mac is supported')
 /** Every component states the platforms it really serves, so a Linux claim cannot ride along. */
 const platformClaims = id => manifestRaw.contributes?.['x-components']?.find(c => c.id === id)?.platforms
-check(JSON.stringify(platformClaims('dsh-ops-mode-standard')) === '["win32","linux","darwin"]',
+check(JSON.stringify(platformClaims('dsh-ops-linux-mode-standard')) === '["win32","linux","darwin"]',
   'the standard mode supports the declared targets using host bash on POSIX')
-check(JSON.stringify(platformClaims('dsh-ops-mode-ptc')) === '["win32","linux","darwin"]',
+check(JSON.stringify(platformClaims('dsh-ops-linux-mode-ptc')) === '["win32","linux","darwin"]',
   'the PTC mode supports the exact worker target matrix')
-check(platformClaims('dsh-ops-background') === undefined,
+check(platformClaims('dsh-ops-linux-background') === undefined,
   'the removed background component is no longer declared')
-check(JSON.stringify(platformClaims('dsh-ops-panel')) === '["win32","linux","darwin"]',
+check(JSON.stringify(platformClaims('dsh-ops-linux-panel')) === '["win32","linux","darwin"]',
   'the panel capture component supports the declared targets (static files, no platform payload)')
 /** The viewer is runtime output, so the template itself has to be in the package. */
 const panelTemplate = 'lib/panel/panel.html'

@@ -10,7 +10,7 @@
  * resolves and which rungs the prompt ladder renders, and serve captured panel
  * reports to a browser over loopback.
  *
- * @module dsh-ops/cli
+ * @module dsh-ops-linux/cli
  */
 
 import { spawnSync } from 'node:child_process'
@@ -58,7 +58,7 @@ Usage:
                                   (default: ./.dsh-ops/panel, latest session preselected)
   dsh-ops provision-shells [--bash] [--pwsh] [--force] [--dry-run] [--pin <file>]
                                   Download the pinned upstream bash and/or PowerShell 7, verify
-                                  their digests, and install them under <DSH_HOME>/dsh-ops/shells
+                                  their digests, and install them under <DSH_HOME>/dsh-ops-linux/shells
   dsh-ops bash-runtime [status|install|remove|git|managed] [--yes] [--dry-run]
                                   Manage optional Bash; git/managed prints a bashPath selection
                                   for the host config editor. remove previews unless --yes.
@@ -72,7 +72,7 @@ Environment:
   DSH_OPS_CARGO        Explicit cargo executable
   CARGO_HOME           Rust toolchain home (.cargo)
   DSH_OPS_RUST_HOME    Directory containing a relocated .cargo toolchain
-  DSH_HOME             DSH home; the provisioned shells live in <DSH_HOME>/dsh-ops/shells
+  DSH_HOME             DSH home; the provisioned shells live in <DSH_HOME>/dsh-ops-linux/shells
   HTTPS_PROXY          Proxy handed to curl explicitly by provision-shells
 
 With --profile, install/uninstall delegate to the official DSH profile manager.

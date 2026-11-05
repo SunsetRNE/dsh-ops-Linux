@@ -29,10 +29,10 @@ function declaredTools(component) {
 
 export function componentChecks(components, platform = process.platform) {
   const checks = [], check = (...value) => checks.push(value)
-  const targets = components.find(row => row.id === 'dsh-ops-mode-ptc')?.targets
+  const targets = components.find(row => row.id === 'dsh-ops-linux-mode-ptc')?.targets
   check(components.length === COMPONENTS.length && new Set(components.map(row => row.id)).size === COMPONENTS.length, 'component declarations are complete and unique')
   for (const component of COMPONENTS) {
-    const row = components.find(value => value.id === `dsh-ops-${component}`)
+    const row = components.find(value => value.id === `dsh-ops-linux-${component}`)
     check(row?.entry === componentEntry(component), `${component} declaration uses its exported entry`)
     check(row?.defaultEnabled === componentEnabled(component, platform), `${component} declaration matches its enablement default`)
     check(isDeepStrictEqual(row?.targets, RUNTIME_COMPONENTS.has(component) ? targets : undefined), `${component} target declaration matches its runtime requirements`)
@@ -40,6 +40,6 @@ export function componentChecks(components, platform = process.platform) {
     if (tools !== undefined) check(isDeepStrictEqual([...(row?.tools ?? [])].sort(), tools), `${component} tool declaration matches its catalogue projection`)
   }
   const retained = Object.fromEntries(['win32', 'linux', 'darwin'].map(entry => [entry, platformSurface(entry).retainedCommand]))
-  check(isDeepStrictEqual(components.find(row => row.id === 'dsh-ops-compat')?.retainedOfficialCommand, retained), 'retained official commands match platform policy')
+  check(isDeepStrictEqual(components.find(row => row.id === 'dsh-ops-linux-compat')?.retainedOfficialCommand, retained), 'retained official commands match platform policy')
   return checks
 }

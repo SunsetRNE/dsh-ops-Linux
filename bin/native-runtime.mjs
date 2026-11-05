@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Build distribution stages, never download on installation or execute foreign binaries.
- * Release input layout: <input>/<platform>-<arch>/dsh-ops-worker[.exe].
+ * Release input layout: <input>/<platform>-<arch>/dsh-ops-linux-worker[.exe].
  * One npm package carries all supported workers; native target selection happens locally.
  *
  * `check` answers two different questions, so it takes two different scopes:

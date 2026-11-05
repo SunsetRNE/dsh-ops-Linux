@@ -18,6 +18,9 @@ this package adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- The package is renamed `dsh-ops-linux` (version `0.4.4-linux.1`), and every row id, component
+  entry and gate assertion follows the new name, so this bundle composes next to the upstream
+  `dsh-ops` instead of colliding on ids.
 - This fork commits the built `lib/` so a checkout installs without a build step, and the
   file-size gate skips generated output under `lib/` for that reason.
 - The declared DSH range is `>=0.2.0-rc.2 <0.2.2-0 || >=0.2.2-0 <0.2.3-0`, so DSH 0.2.2 is

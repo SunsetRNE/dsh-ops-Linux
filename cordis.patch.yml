@@ -6,47 +6,47 @@
 # exported but are no longer inserted here: a saved override for one of those
 # old specifiers still loads its legacy module, it just cannot match a new row.
 - insert:
-    - id: dsh-ops-mode-minimal
-      name: dsh-ops/mode-minimal
+    - id: dsh-ops-linux-mode-minimal
+      name: dsh-ops-linux/mode-minimal
       config:
         promptPolicy: true
         publishBashTool: true
-    - id: dsh-ops-mode-standard
-      name: dsh-ops/mode-standard
+    - id: dsh-ops-linux-mode-standard
+      name: dsh-ops-linux/mode-standard
       config:
         promptPolicy: true
         required: false
-    - id: dsh-ops-mode-ptc
-      name: dsh-ops/mode-ptc
+    - id: dsh-ops-linux-mode-ptc
+      name: dsh-ops-linux/mode-ptc
       config:
         required: false
         alwaysLoaded: []
-    - id: dsh-ops-mode-cordis
-      name: dsh-ops/mode-cordis
+    - id: dsh-ops-linux-mode-cordis
+      name: dsh-ops-linux/mode-cordis
       config:
         promptPolicy: true
         required: false
-    - id: dsh-ops-discovery
-      name: dsh-ops/discovery
+    - id: dsh-ops-linux-discovery
+      name: dsh-ops-linux/discovery
       config:
         enabled: true
         maxResults: 3
         alwaysLoaded: []
         required: false
         denyCredentialReads: true
-    - id: dsh-ops-compat
-      name: dsh-ops/compat
+    - id: dsh-ops-linux-compat
+      name: dsh-ops-linux/compat
       disabled: true
-    - id: dsh-ops-panel
-      name: dsh-ops/panel
+    - id: dsh-ops-linux-panel
+      name: dsh-ops-linux/panel
       disabled: true
       config:
         # Row enablement starts capture; explicit legacy capture:false stays inert.
         capture: true
         textLimit: 2000
         maxSessionBytes: 8388608
-    - id: dsh-ops-tui
-      name: dsh-ops/tui
+    - id: dsh-ops-linux-tui
+      name: dsh-ops-linux/tui
       disabled: true
       config:
         maxSessions: 32

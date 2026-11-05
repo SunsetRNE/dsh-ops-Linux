@@ -33,7 +33,7 @@
  * Exit codes: 0 all steps passed, 1 a step failed, 2 the host cannot answer this gate
  * (wrong target, missing toolchain) — never a green run for either.
  *
- * @module dsh-ops/scripts/verify-gate
+ * @module dsh-ops-linux/scripts/verify-gate
  */
 
 import { spawn } from 'node:child_process'
@@ -195,7 +195,7 @@ async function main() {
     let fixture = process.env.DSH_OPS_TEST_BASH
     if (!fixture && declared) fixture = pinnedBashExecutable()
     if (!fixture) {
-      const fixtureEnv = { DSH_HOME: mkdtempSync(path.join(tmpdir(), 'dsh-ops-bash-fixture-')) }
+      const fixtureEnv = { DSH_HOME: mkdtempSync(path.join(tmpdir(), 'dsh-ops-linux-bash-fixture-')) }
       await run('Acquire optional pinned Bash fixture', 'node', ['bin/dsh-ops.mjs', 'bash-runtime', 'install'], { env: fixtureEnv })
       fixture = pinnedBashExecutable({ env: fixtureEnv })
     }
@@ -213,7 +213,7 @@ async function main() {
   // script would never be green there. Windows keeps its protection through the skip set below
   // instead — a skip outside `ALLOWED_SKIPS` fails, and the suites that would betray a worker
   // that was never built (`permissions`, `ptc`) are not in it.
-  const env = { ...runtimeEnv, DSH_HOME: mkdtempSync(path.join(tmpdir(), 'dsh-ops-gate-')) }
+  const env = { ...runtimeEnv, DSH_HOME: mkdtempSync(path.join(tmpdir(), 'dsh-ops-linux-gate-')) }
   if (TARGET !== 'win32-x64') env.DSH_OPS_REQUIRE_RUNTIME = '1'
   // Keep the external-checkout suites as skips: `DSH_OPS_REQUIRE_RUNTIME=1` would otherwise
   // count them as failures and make this gate permanently red on a machine without that checkout.
@@ -225,7 +225,7 @@ async function main() {
 
   // The artifact, not just the build. `npm pack` honours `files`, and a package that silently drops
   // `runtime/` installs fine and then fails in the user's profile — so check the thing users get.
-  const packDir = mkdtempSync(path.join(tmpdir(), 'dsh-ops-pack-'))
+  const packDir = mkdtempSync(path.join(tmpdir(), 'dsh-ops-linux-pack-'))
   await run('pack the release artifact', 'npm', ['pack', '--pack-destination', packDir])
   const tarball = readdirSync(packDir).find(entry => entry.endsWith('.tgz'))
   if (tarball === undefined) failures.push('npm pack produced no .tgz in the pack destination')

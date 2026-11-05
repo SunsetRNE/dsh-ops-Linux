@@ -20,6 +20,8 @@
 
 # dsh-ops
 
+> **This is `dsh-ops-linux`, a self-maintained branch of [T-Auto/dsh-ops](https://github.com/T-Auto/dsh-ops)** targeting Linux/ARM64 (Android) and DSH 0.2.2. Install with `dsh plugin --profile web add <tarball or this checkout>`. Changes and build steps: [PORT.en.md](PORT.en.md).
+
 以提高token效率为目的，提供新增的ops系列工具并隐藏部分官方工具为方案的插件，低改动面，低侵入性，与其他插件广泛兼容。
 
 - （仅 Windows）启用与 dsh 原生 bash 行为一致的 ops_bash；启用模式行时用它替换官方 pwsh，兼容模式则保留官方工具

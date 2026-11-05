@@ -27,7 +27,7 @@ const tempRoot = tmpdir()
 const foreignHome = process.env.DSH_HOME !== undefined
   && !path.resolve(process.env.DSH_HOME).startsWith(path.resolve(tempRoot))
 const ownedHome = process.env.DSH_HOME === undefined || foreignHome
-if (ownedHome) process.env.DSH_HOME = mkdtempSync(path.join(tempRoot, 'dsh-ops-trial-home-'))
+if (ownedHome) process.env.DSH_HOME = mkdtempSync(path.join(tempRoot, 'dsh-ops-linux-trial-home-'))
 const { bootHost, callTool, mountPlugin, scopedToolNames, shutdown } = await import('../test/lib/host.mjs')
 
 const REPORT = 'tools-trial-report.md'
@@ -38,7 +38,7 @@ const record = (tool, outcome, detail) => {
 }
 
 process.stdout.write(`  home: ${process.env.DSH_HOME}\n`)
-const workspace = mkdtempSync(path.join(tmpdir(), 'dsh-ops-trial-'))
+const workspace = mkdtempSync(path.join(tmpdir(), 'dsh-ops-linux-trial-'))
 mkdirSync(path.join(workspace, 'nested'), { recursive: true })
 writeFileSync(path.join(workspace, 'alpha.txt'), 'alpha line\nsecond line\n')
 writeFileSync(path.join(workspace, 'beta.txt'), 'beta only\n')

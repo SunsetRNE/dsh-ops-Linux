@@ -25,7 +25,7 @@
  * Exit codes: 0 when every code file is at or under the limit, 1 when at least
  * one is over, 2 when the file list itself could not be produced.
  *
- * @module dsh-ops/scripts/check-file-size
+ * @module dsh-ops-linux/scripts/check-file-size
  */
 
 import { execFileSync } from 'node:child_process'

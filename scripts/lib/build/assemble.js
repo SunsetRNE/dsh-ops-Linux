@@ -5,7 +5,7 @@
  * `packages/bash-win32-x64/` plus the verified upstream tree and a per-package
  * `provenance.json`. PowerShell stays with the host and is never packaged.
  *
- * @module dsh-ops/build/lib/assemble
+ * @module dsh-ops-linux/build/lib/assemble
  */
 
 import fs from 'node:fs'

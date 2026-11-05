@@ -6,7 +6,7 @@
  * invocations. The pipeline's entry point and the digest that pins it live here
  * too, so a stage is only reused while the same entry produced it.
  *
- * @module dsh-ops/build/lib/util
+ * @module dsh-ops-linux/build/lib/util
  */
 
 import crypto from 'node:crypto'

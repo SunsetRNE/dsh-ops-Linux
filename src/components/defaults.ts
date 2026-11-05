@@ -6,4 +6,4 @@ export function componentEnabled(component: Component, _platform: string): boole
   // fallback, data capture, and the TUI integration are opt-in.
   return !['compat', 'panel', 'tui'].includes(component)
 }
-export function componentEntry(component: Component): string { return `dsh-ops/${component}` }
+export function componentEntry(component: Component): string { return `dsh-ops-linux/${component}` }

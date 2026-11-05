@@ -21,6 +21,8 @@
 
 # dsh-ops
 
+> **本仓库是 [T-Auto/dsh-ops](https://github.com/T-Auto/dsh-ops) 的自维护分支 `dsh-ops-linux`**，面向 Linux/ARM64（Android）并适配 DSH 0.2.2。安装：`dsh plugin --profile web add <tarball 或本仓库路径>`。改动与构建见 [PORT.md](PORT.md)。
+
 OPS 为 DSH 增加有界文件与文档工具。Native 模式返回紧凑、带行号的文本；PTC 代码从同一个按调用启动的 Rust worker 获取类型化 Outcome。宿主集成使用严格 TypeScript，编译后保持已有 JavaScript 包路径。
 
 支持：Windows x64、Linux x64，以及 macOS 13+ 的 Apple Silicon 与 Intel（`darwin-arm64`、`darwin-x64`）。见 [macOS](docs/macos.zh.md)。

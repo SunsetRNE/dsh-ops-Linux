@@ -7,7 +7,7 @@
  * Usage:
  *   node scripts/build-platform-packages.mjs [all|publish-dir|check] [--dist <directory>]
  *
- * @module dsh-ops/build/platform-packages
+ * @module dsh-ops-linux/build/platform-packages
  */
 
 import fs from 'node:fs'

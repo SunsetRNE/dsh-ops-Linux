@@ -4,7 +4,7 @@
  * The main package's exact published content plus the injected platform
  * dependencies, packed as the artifact a release uploads.
  *
- * @module dsh-ops/build/lib/publish-dir
+ * @module dsh-ops-linux/build/lib/publish-dir
  */
 
 import fs from 'node:fs'

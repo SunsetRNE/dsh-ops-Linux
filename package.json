@@ -1,6 +1,6 @@
 {
-  "name": "dsh-ops",
-  "version": "0.4.4",
+  "name": "dsh-ops-linux",
+  "version": "0.4.4-linux.1",
   "publishConfig": {
     "access": "public"
   },
@@ -10,7 +10,7 @@
   },
   "homepage": "https://github.com/T-Auto/dsh-ops#readme",
   "bugs": {
-    "url": "https://github.com/T-Auto/dsh-ops/issues"
+    "url": "https://github.com/T-Auto/dsh-ops-linux/issues"
   },
   "os": [
     "win32",
@@ -130,7 +130,7 @@
     }
   },
   "bin": {
-    "dsh-ops": "bin/dsh-ops.mjs"
+    "dsh-ops-linux": "bin/dsh-ops.mjs"
   },
   "dsh": {
     "bundle": {

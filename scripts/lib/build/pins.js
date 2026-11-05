@@ -9,7 +9,7 @@
  * What is left here is measurement plus the one defensive reader that fails
  * loudly when the module exports a pin this pipeline cannot read.
  *
- * @module dsh-ops/build/lib/pins
+ * @module dsh-ops-linux/build/lib/pins
  */
 
 import * as shellsModule from '../../../lib/shells.js'

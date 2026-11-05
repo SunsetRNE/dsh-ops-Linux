@@ -21,6 +21,8 @@
 
 # dsh-ops
 
+> **This is `dsh-ops-linux`, a self-maintained branch of [T-Auto/dsh-ops](https://github.com/T-Auto/dsh-ops)** targeting Linux/ARM64 (Android) and DSH 0.2.2. Install with `dsh plugin --profile web add <tarball or this checkout>`. Changes and build steps: [PORT.en.md](PORT.en.md).
+
 OPS adds bounded file and document tools to DSH. Native mode returns compact, line-numbered text;
 PTC code receives typed Outcome values from the same one-shot Rust worker. Host integration is
 strict TypeScript, compiled to the existing JavaScript package paths.
